@@ -1,0 +1,24 @@
+name = obc_theme
+description = Starter theme designed for giving the developer more flexibility
+version = 1.2.7
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/theme.css
+stylesheets[print][] = css/print.css
+scripts[] = js/bootstrap.min.js
+scripts[] = js/multicarousel.js
+
+regions[header_left]            = Header Left
+regions[header_right]           = Header Right
+regions[header_menu]            = Header  Menu
+regions[hero]                   = Hero
+regions[left]                   = Left sidebar
+regions[right]                  = Right sidebar
+regions[content]                = Content
+regions[publication]            = Publication
+regions[feed_pane]              = Feed pane
+regions[content_bottom]         = Content bottom
+regions[right_download]         = Right Download
+regions[footer]                 = Footer
+

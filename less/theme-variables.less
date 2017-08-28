@@ -1,0 +1,137 @@
+// @file: theme-variables.less
+// Add custom variables for use in theme.less
+
+@base-color: #333;
+@brand-primary: #21387c;
+
+///////////////////////// color pallert
+@dark-blue:#083471;
+@light-blue:#1594ff;
+
+@light:#ffffff;
+@dark:#333;
+
+@dark-gray:#f2f2f2;
+@light-black:#2e2e2e;
+@strong-gray:#3b3c3c;
+
+@dark-text:#292929;
+@white:#ffffff;
+@black:#000000;
+
+// sub colors
+@light-blue-light: lighten(@light-blue, 10%);
+///////////////////////////////////////
+
+//== Typography
+//
+@font-size-base: 18px;
+@em: @font-size-base*1em;
+
+@line-height-base: 1.222em; // 22/18
+@font-family-questrial:'questrial', sans-serif;
+@font-family-myriad:'Myriad Pro',sans-serif;
+@font-family-montserrat: 'Montserrat', sans-serif;
+@font-family-lato: 'Lato', sans-serif;
+
+@font-size-h1:            floor((@font-size-base * 2.0)); // ~36px
+@font-size-h2:            floor((@font-size-base * 1.222)); // ~22px
+
+@font-size-h3:            ceil((@font-size-base * 1.111)); // ~20px
+@font-size-h4:            ceil((@font-size-base * 1.056)); // ~19px
+@font-size-h5:            ceil((@font-size-base * 1.0)); // ~18px
+@font-size-h6:            ceil((@font-size-base * 0.889)); // ~16px
+
+//** Global
+@link-color: #1594ff ;
+@link-hover-color:  #bbd535;
+@text-decoration-none: none;
+@link-decoration-underline: underline;
+@link-outline-none:  none;
+
+
+//----
+
+//
+// Typography
+// --------------------------------------------------
+
+body {   
+    color: @base-color;
+    font-family: @font-family-questrial;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    font-weight: 300;
+    -ms-overflow-style: scrollbar;
+}
+
+// Headings
+// -------------------------
+
+
+/*
+h1, .h1 { .em(36) }
+h2, .h2 { .em(22) }
+h3, .h3 { .em(20) }
+h4, .h4 { .em(19) }
+h5, .h5 { .em(18)}
+h6, .h6 { .em(16) }
+*/
+
+
+h1, .h1 { font-size: @font-size-h1 }
+h2, .h2 { font-size: @font-size-h2 }
+h3, .h3 { font-size: @font-size-h3 }
+h4, .h4 { font-size: @font-size-h4 }
+h5, .h5 { font-size: @font-size-h5 }
+h6, .h6 { font-size: @font-size-h6 }
+
+a {
+    outline: @link-outline-none;
+    color: @link-color;
+    text-decoration: @link-decoration-underline;
+    font-size:@font-size-h6;
+}
+a:link, a:visited {
+    outline: @link-outline-none;
+    text-decoration: @text-decoration-none;
+}
+a:active, a:focus, a:hover {
+    //color: @link-hover-color;
+    text-decoration: @link-decoration-underline;
+}
+// social media
+// -------------------------
+
+.facebook{
+    background-color: #3D5B96;
+}
+.twitter{
+    background-color: #3399CC; 
+}
+.linkedin{
+    background-color: #1884BB; 
+}
+.google-plus{
+    background-color: #DD3F34;
+}
+//list
+.undecorated{
+    text-decoration: none;
+}
+// -------------------------
+
+
+//clear fix
+.mclearfix{
+    clear: both;
+}
+// pixel to em
+.em( @target) {
+    font-size: round((@target / @em),1) + 0em;
+}
+
+.ul-nospace{
+   margin: 0;
+   padding: 0;
+}
