@@ -19,6 +19,7 @@ regions[content]                = Content
 regions[publication]            = Publication
 regions[feed_pane]              = Feed pane
 regions[content_bottom]         = Content bottom
+regions[advertise_content]      = Advertise Content
 regions[right_download]         = Right Download
 regions[footer]                 = Footer
 

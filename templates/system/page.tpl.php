@@ -85,6 +85,11 @@ $banner_action = $node->field_banner_cta[0]['view'];
 
 $main_action_left = $node->field_ctaleft_content[0]['view'];
 $main_action_right = $node->field_ctaright_content[0]['view'];
+
+
+
+$inner_banner_image = $node->field_banner_image_x[0]['view'];
+$my_teaser = $node->field_my_teaser[0]['value'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -285,7 +290,7 @@ $main_action_right = $node->field_ctaright_content[0]['view'];
                     <div id="main" class="col-xs-12 col-sm-8">
 
                         <div id="content">
-                            <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+
                             <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php
                             if (!empty($messages)): print $messages;
@@ -296,11 +301,21 @@ $main_action_right = $node->field_ctaright_content[0]['view'];
                             endif;
                             ?>
                             <div id="content-content" class="clear-block">
-                                <?php print $content; ?>
-                                <div class="row intro-btn-wrap">
-                                    <div class="col-xs-12 col-sm-6"><?php print $main_action_left ?></div>
-                                    <div class="right col-xs-12 col-sm-6"><?php print $main_action_right ?></div>
+
+                                <div class="inner-banner">
+                                    <div class="banner-img"><?php print $inner_banner_image ?></div>
+                                    <div class="banner-data" >
+                                        <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                                        <?php
+                                        if ($my_teaser) {
+                                            echo "$my_teaser";
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
+
+
+                                <?php print $content; ?>
                             </div> <!-- /content-content -->
                             <?php print $feed_icons; ?>
                         </div> <!-- /content -->
@@ -351,6 +366,14 @@ $main_action_right = $node->field_ctaright_content[0]['view'];
             <?php print $closure; ?>
         <?php } ?>
 
+
+        <?php if (!empty($advertise_content)) { ?>
+            <div class="fluid advertise-section">
+                <div class="container">              
+                    <?php print $advertise_content; ?>             
+                </div>
+            </div>    
+        <?php } ?>
 
 
         <div class="fluid footer-nav">

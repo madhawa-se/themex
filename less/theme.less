@@ -252,6 +252,10 @@ body{
 
 //multiple clases
 
+.advertise-section p a{
+    .me-btn;
+    font-size: 18px;
+}
 
 .intro-btn-wrap .right a:before, .intro .content a:nth-child(2):before{ 
     .icon-awesome;
@@ -522,6 +526,23 @@ body{
     }
 }
 
+//inner banner
+
+.inner-banner{
+    &,h1{
+        color:@white;
+    }
+    position: relative;
+    .banner-data{
+        position: absolute;
+        bottom: 0;
+        margin: 0 30px 38px 30px;
+    }
+    #page-title{
+        margin-bottom: 20px;
+    }
+}
+
 // hero 
 
 .hero-text{
@@ -780,6 +801,21 @@ body{
         }
     }
 }
+.not-front .feed_pane{
+    h2{
+        font-size: 34px;
+        margin-bottom: 0;
+    }
+    .news-card{
+        .more{
+            margin-top: 36px;
+        }
+        .title{
+            font-size: 18px;
+            line-height: 18px;
+        }
+    }
+}
 
 @media (max-width: 991px){
     .feed_pane h2 a{
@@ -851,13 +887,14 @@ h2:before{
 .not-front {
     .inner-news{
         .views-row {
-            width: 42%;
+            width: 48%;
             &.views-row-odd{
                 float: left;
-            }
-            &.views-row-odd{
-                float: right;
                 clear: both;
+            }
+            &.views-row-even{
+                float: right;
+
             }
         }
     }
@@ -982,7 +1019,30 @@ h2:before{
     }
 }
 
+//advertise
 
+.advertise-section{
+    padding: 60px 0;
+    background: @dark-blue;
+    .content{
+        text-align: center;
+    }
+    p{
+        margin: 0;
+        color: #fff;
+        font-size: 1.995em;
+        display: inline-block;
+        line-height: normal;
+        vertical-align: baseline;
+        span{
+            color:@light-blue;
+        }
+        a{
+            width: 260px;
+            margin-left: 10px;
+        }
+    }
+}
 
 //footer
 
