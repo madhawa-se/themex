@@ -13,6 +13,23 @@
 </div>
 </div>
 
+        <div class="news-card">
+            <div class="">
+                <div class="news-wrap">
+                    <div class="news-cat">[type]</div>               
+                        [field_blog_post_image_fid]    
+                </div>
+
+                <div class="news-des">
+                    <div class="date">[created]</div>
+                    <div class="title">[title]</div>
+                    <div class="more">[view_node]</div>
+                </div>
+
+            </div>
+
+        </div>
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

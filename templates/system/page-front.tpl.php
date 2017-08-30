@@ -155,7 +155,7 @@ foreach (get_all_nodes() as $node) {
 
             </div> <!-- /navigation -->
 
-            <div class="bs-example mob-nav visible-xs">
+            <div class="mob-nav visible-xs">
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -183,13 +183,13 @@ foreach (get_all_nodes() as $node) {
                             <li>
                                 <a href="tel:01323 720 555"> 
                                     <i class="fa fa-phone"></i>
-                                    <span class="hidn-txt"></span>
+                                    <span class="hidn-txt">Telephone</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:admin@obcaccountants.com">
+                                <a href="mailto:<?php print $site_mail?>">
                                     <i class="fa fa-envelope"></i>
-                                    <span class="hidn-txt"></span>
+                                    <span class="hidn-txt">Email</span>
                                 </a>
                             </li>
                         </ul>
@@ -249,11 +249,6 @@ foreach (get_all_nodes() as $node) {
                         }
                         ?>
                     </div>
-                    <?php
-                    if (!empty($hero)) {
-                        //print $hero;
-                    }
-                    ?>
 
                 </div>
             </div>
@@ -285,7 +280,7 @@ foreach (get_all_nodes() as $node) {
                             <div id="content-content" class="clear-block">
                                 <?php print $content; ?>
                                 <div class="row intro-btn-wrap">
-                                    <div class="col-xs-12 col-sm-6"><?php print $main_action_left ?></div>
+                                    <div class="left col-xs-12 col-sm-6"><?php print $main_action_left ?></div>
                                     <div class="right col-xs-12 col-sm-6"><?php print $main_action_right ?></div>
                                 </div>
                             </div> <!-- /content-content -->
