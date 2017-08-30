@@ -179,7 +179,7 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                         </button>
                         <ul class="item-top list-inline">
                             <li>
-                                <a href="tel:01323 720 555"> 
+                                <a href="tel:<?php print $company_phone;?>"> 
                                     <i class="fa fa-phone"></i>
                                     <span class="hidn-txt"></span>
                                 </a>

@@ -85,6 +85,13 @@ $banner_action = $node->field_banner_cta[0]['view'];
 
 $main_action_left = $node->field_ctaleft_content[0]['view'];
 $main_action_right = $node->field_ctaright_content[0]['view'];
+
+
+/*
+foreach (get_all_nodes() as $node) {
+  print token_replace("[termalias-raw]", 'node', $node);
+}
+  */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
