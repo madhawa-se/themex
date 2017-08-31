@@ -82,7 +82,6 @@ $banner_name = $node->field_slideshow_name[0]['value'];
 $banner_content = $node->field_banner_content[0]['value'];
 $banner_company = $node->field_banner_company[0]['value'];
 $banner_action = $node->field_banner_cta[0]['view'];
-
 $main_action_left = $node->field_ctaleft_content[0]['view'];
 $main_action_right = $node->field_ctaright_content[0]['view'];
 
@@ -107,7 +106,7 @@ $my_teaser = $node->field_my_teaser[0]['value'];
 
         <div id="header" class="container">
             <div class="row  hidden-xs">
-                <div class="col-sm-4 header-left-region hidden-xs">
+                <div class="col-sm-4 header-left-region">
                     <!-- header-left -->
                     <?php if (!empty($header_left)): ?>
                         <?php print $header_left; ?>
@@ -128,7 +127,7 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                     <!-- /header-logo -->
 
                 </div>
-                <div class="col-sm-4 hidden-xs">
+                <div class="col-sm-4">
                     <!-- header-right -->
                     <?php if (!empty($header_right)): ?>
                         <?php print $header_right; ?>
@@ -157,20 +156,7 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <!--
-                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <button type="button"  class="navbar-toggle">                         
-                            <a href="mailto:admin@obcaccountants.com"><i class="fa fa-phone"></i></a>
-                        </button>
-                        <button type="button"  class="navbar-toggle">
-                            <a href="mailto:admin@obcaccountants.com"><i class="fa fa-envelope"></i></a>
-                        </button>
-                        -->
+
                         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
@@ -179,15 +165,15 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                         </button>
                         <ul class="item-top list-inline">
                             <li>
-                                <a href="tel:<?php print $company_phone;?>"> 
+                                <a href="tel:<?php print $company_phone; ?>"> 
                                     <i class="fa fa-phone"></i>
-                                    <span class="hidn-txt"></span>
+                                    <span class="hidn-txt">phone</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:admin@obcaccountants.com">
+                                <a href="mailto:<?php print $site_mail ?>">
                                     <i class="fa fa-envelope"></i>
-                                    <span class="hidn-txt"></span>
+                                    <span class="hidn-txt">email</span>
                                 </a>
                             </li>
                         </ul>
@@ -266,31 +252,15 @@ $my_teaser = $node->field_my_teaser[0]['value'];
         </div>
 
 
-        <div id="page" class="container test">
+        <div id="page" class="container">
+
             <div id="container" class="clear-block">
 
-                <div class="row">
-
-                    <?php if (!empty($left)) { ?>
-                        <div class="col-xs-12 col-sm-4 left-sidebar">
-                            <div class="front-publication-wrap">
-                                <?php print $publication; ?>
-                            </div>
-
-                            <?php if (!empty($left)) { ?>
-
-                                <div>
-                                    <?php print $left ?>
-                                </div>
-                            <?php } ?>
-                        </div>
-
-                    <?php } ?>
-
-                    <div id="main" class="col-xs-12 col-sm-8">
+                <div id="main" class="column">
+                    <div id="main-squeeze">
 
                         <div id="content">
-
+                            <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
                             <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php
                             if (!empty($messages)): print $messages;
@@ -300,36 +270,55 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                             if (!empty($help)): print $help;
                             endif;
                             ?>
+                            <?php if (!empty($content_top)): ?>
+                                <div id="content-top">
+                                    <?php print $content_top; ?>
+                                </div> <!-- /content_top -->
+                            <?php endif; ?>
                             <div id="content-content" class="clear-block">
-
+                                <?php print $content; ?>
                                 <div class="inner-banner">
-                                    <div class="banner-img"><?php print $inner_banner_image ?></div>
-                                    <div class="banner-data" >
+
+
+
+                                    <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
+                                    <div class="<?php echo (($inner_banner_image) ? "banner-data" : "") ?>">
                                         <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
                                         <?php
-                                        if ($my_teaser) {
-                                            echo "$my_teaser";
+                                        if ($inner_banner_image && $my_teaser) {
+                                            echo $my_teaser;
                                         }
                                         ?>
                                     </div>
                                 </div>
 
 
-                                <?php print $content; ?>
                             </div> <!-- /content-content -->
                             <?php print $feed_icons; ?>
                         </div> <!-- /content -->
 
+                    </div>
+                </div> <!-- /main-squeeze /main -->
 
-                    </div> <!-- /main-squeeze /main -->
+                <?php if (!empty($left)): ?>
+                    <div id="sidebar-left" class="column sidebar">
+                        <?php print $left; ?>
 
+                        <div class="front-publication-wrap">
+                            <?php print $publication; ?>
+                        </div>
+                    </div> <!-- /sidebar-left -->
+                <?php endif; ?>
 
+                <?php if (!empty($right)): ?>
+                    <div id="sidebar-right" class="column sidebar">
+                        <?php print $right; ?>
+                    </div> <!-- /sidebar-right -->
+                <?php endif; ?>
 
+            </div> <!-- /container -->
 
-                </div> <!-- /container -->
-
-            </div>
-        </div><!-- /page -->
+        </div> <!-- /page -->        
 
 
         <?php if (!empty($feed_pane)) { ?>
