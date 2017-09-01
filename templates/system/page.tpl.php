@@ -104,7 +104,7 @@ $my_teaser = $node->field_my_teaser[0]['value'];
     </head>
     <body class="<?php print $body_classes; ?>">
 
-        <div id="header" class="container">
+        <div id="header" class="header container">
             <div class="row  hidden-xs">
                 <div class="col-sm-4 header-left-region">
                     <!-- header-left -->
@@ -260,8 +260,18 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                     <div id="main-squeeze">
 
                         <div id="content">
-                            <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-                            <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+                            
+                            <?php if (!empty($content_top)): ?>
+                                <div id="content-top">
+                                    <?php print $content_top; ?>
+                                </div> <!-- /content_top -->
+                            <?php endif; ?>
+                                
+                            <div class="inner-banner-region">
+                                <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
+                            </div>
+                             
+                           <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php
                             if (!empty($messages)): print $messages;
                             endif;
@@ -270,29 +280,11 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                             if (!empty($help)): print $help;
                             endif;
                             ?>
-                            <?php if (!empty($content_top)): ?>
-                                <div id="content-top">
-                                    <?php print $content_top; ?>
-                                </div> <!-- /content_top -->
-                            <?php endif; ?>
+
                             <div id="content-content" class="clear-block">
-                                <?php print $content; ?>
-                                <div class="inner-banner">
 
 
-
-                                    <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
-                                    <div class="<?php echo (($inner_banner_image) ? "banner-data" : "") ?>">
-                                        <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-                                        <?php
-                                        if ($inner_banner_image && $my_teaser) {
-                                            echo $my_teaser;
-                                        }
-                                        ?>
-                                    </div>
-                                </div>
-
-
+                                <?php print $content; ?>                              
                             </div> <!-- /content-content -->
                             <?php print $feed_icons; ?>
                         </div> <!-- /content -->
@@ -303,10 +295,6 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                 <?php if (!empty($left)): ?>
                     <div id="sidebar-left" class="column sidebar">
                         <?php print $left; ?>
-
-                        <div class="front-publication-wrap">
-                            <?php print $publication; ?>
-                        </div>
                     </div> <!-- /sidebar-left -->
                 <?php endif; ?>
 

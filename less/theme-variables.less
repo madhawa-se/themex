@@ -34,13 +34,22 @@
 @font-family-montserrat: 'Montserrat', sans-serif;
 @font-family-lato: 'Lato', sans-serif;
 
-@font-size-h1:            floor((@font-size-base * 2.0)); // ~36px
+/*@font-size-h1:            floor((@font-size-base * 2.0)); // ~36px
 @font-size-h2:            floor((@font-size-base * 1.222)); // ~22px
 
 @font-size-h3:            ceil((@font-size-base * 1.111)); // ~20px
 @font-size-h4:            ceil((@font-size-base * 1.056)); // ~19px
 @font-size-h5:            ceil((@font-size-base * 1.0)); // ~18px
-@font-size-h6:            ceil((@font-size-base * 0.889)); // ~16px
+@font-size-h6:            ceil((@font-size-base * 0.889)); // ~16px*/
+
+
+@font-size-h1:            floor((@font-size-base * 2.0)); // ~36px
+@font-size-h2:            floor((@font-size-base * 1.889)); // ~34px
+
+@font-size-h3:            ceil((@font-size-base * 1.777)); // ~32px
+@font-size-h4:            ceil((@font-size-base * 1.667)); // ~30px
+@font-size-h5:            ceil((@font-size-base * 1.556)); // ~28px
+@font-size-h6:            ceil((@font-size-base * 1.444)); // ~26px
 
 //** Global
 @link-color: #1594ff ;
@@ -90,7 +99,7 @@ a {
     outline: @link-outline-none;
     color: @link-color;
     text-decoration: @link-decoration-underline;
-    font-size:@font-size-h6;
+    font-size:16px;
 }
 a:link, a:visited {
     outline: @link-outline-none;

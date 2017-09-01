@@ -18,6 +18,13 @@
 #front-page-edit-link li:nth-child(2) a {
   padding: 10px 30px;
 }
+/*@font-size-h1:            floor((@font-size-base * 2.0)); // ~36px
+@font-size-h2:            floor((@font-size-base * 1.222)); // ~22px
+
+@font-size-h3:            ceil((@font-size-base * 1.111)); // ~20px
+@font-size-h4:            ceil((@font-size-base * 1.056)); // ~19px
+@font-size-h5:            ceil((@font-size-base * 1.0)); // ~18px
+@font-size-h6:            ceil((@font-size-base * 0.889)); // ~16px*/
 body {
   color: #333333;
   font-family: 'questrial', sans-serif;
@@ -40,29 +47,29 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 21px;
+  font-size: 34px;
 }
 h3,
 .h3 {
-  font-size: 20px;
+  font-size: 32px;
 }
 h4,
 .h4 {
-  font-size: 20px;
+  font-size: 31px;
 }
 h5,
 .h5 {
-  font-size: 18px;
+  font-size: 29px;
 }
 h6,
 .h6 {
-  font-size: 17px;
+  font-size: 26px;
 }
 a {
   outline: none;
   color: #1594ff;
   text-decoration: underline;
-  font-size: 17px;
+  font-size: 16px;
 }
 a:link,
 a:visited {

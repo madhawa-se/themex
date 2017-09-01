@@ -15,6 +15,7 @@ regions[header_menu]            = Header  Menu
 regions[hero]                   = Hero
 regions[left]                   = Left sidebar
 regions[right]                  = Right sidebar
+regions[content_top]             = Content Top
 regions[content]                = Content
 regions[publication]            = Publication
 regions[feed_pane]              = Feed pane

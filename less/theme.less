@@ -18,7 +18,7 @@
 // --------------------------------------------------
 @import "theme-variables.less";
 
-h1,h2,h3,h4,h5,h6 {
+h1,.h1,h2,h3,h4,h5,h6{
     margin: 0 0 1em;
     color: @dark-blue;
     font-family: @font-family-questrial;
@@ -72,6 +72,9 @@ p {
     li{
         background: none;
     }
+}
+.no-padding{
+    padding: 0;
 }
 
 ul.primary li {
@@ -190,7 +193,6 @@ body{
         .make-sm-column-push(3);
     }
 }
-
 /*............. right sidebar ...............*/
 .sidebar-right {
     #main {
@@ -274,7 +276,15 @@ body{
 }
 
 // btn
-
+input[type="submit"], input[type="reset"] {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 7px 20px;
+    border: none;
+    background: #083471;
+    color: #fff;
+    font-size: 1.111em;
+}
 .me-btn{
     color: rgb( 255, 255, 255 );
     text-align: center;
@@ -283,7 +293,7 @@ body{
     border: 1px solid rgba(255, 0, 0, 0);
     margin-top: 2px;
     padding: 13px 0 14px;
-    min-width: 180px;
+/*    min-width: 180px;*/
     font-size: 1em;
     display: inline-block;
     text-decoration: none;
@@ -452,6 +462,7 @@ body{
     }
     /*mobile nevigation*/
     .mob-nav{
+
         .item-top{
             float: right;
             margin: 0;
@@ -489,7 +500,7 @@ body{
         }
 
         .nav-tools{
-            ul li{
+            li{
                 display: inline-block;
                 padding: 0;
                 a{
@@ -741,6 +752,9 @@ body{
     }
 
     .intro-btn-wrap {
+        .me-btn{
+            min-width: 180px;
+        }
         a{
             width:100%;
             @media only screen and (max-width : 767px) {
@@ -791,14 +805,22 @@ body{
             /* line-height: 4; */
         }
     }
-    .not-front{
+
+}
+.not-front{
+    #page{
         .front-publication-wrap{
+            padding: 25px;
             .me-btn{
                 font-size: 0.8em;
+            }
+            .content-wrap{
+                padding:20px;
             }
         }
     }
 }
+
 @media only screen and (max-width: 767px){
     #page{
         padding-top: auto;
@@ -901,9 +923,12 @@ h2:before{
 }
 
 // cloud
-#content-bottom-region{
-    padding-bottom: 60px;
-    padding-top: 60px;
+
+.front {
+    #content-bottom-region{
+        padding-bottom: 60px;
+        padding-top: 60px;
+    }
 }
 .cloud{
     background-image: url("images/../../images/wallpaper2.jpg");
@@ -1024,6 +1049,7 @@ h2:before{
     padding: 20px;
     font-size: 16px;
     text-align: center;
+    margin-top: 60px;
 
     .secondary-links {
         .no-bullets;
@@ -1044,17 +1070,32 @@ h2:before{
     background-color: @strong-gray;
     padding-top: 42px;
     overflow: hidden;
-}
-#footer{
-    color: @white;
-    p{
-        font-size: 0.889em;
+
+    #footer{
+        color: @white;
+        p{
+            font-size: 0.889em;
+        }
+        h2{
+            margin-bottom: 5px;
+            color:@white;
+        }
+        .scroll-tweet iframe{
+            width: 100%;
+        }
     }
-    h2{
-        margin-bottom: 5px;
-        color:@white;
+}
+
+@media (max-width: 767px) {
+    .footer-wrapper{
+        #footer{
+            .scroll-tweet iframe{
+                width:auto;
+            }
+        }
     }
 }
+
 
 
 /*inner pages*/
@@ -1064,6 +1105,16 @@ h2:before{
 .inner-banner{
     margin-bottom: 34px;
     position: relative;
+    &:before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0, #000 140%);
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0, #000 140%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0, #000 140%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+    }
     .banner-data{
         position: absolute;
         bottom: 0;
@@ -1075,16 +1126,19 @@ h2:before{
     #page-title{
         margin-bottom: 20px;
     }
-    .banner-img{
-        &:before{
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0, #000 140%);
-            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0, #000 140%);
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0, #000 140%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+
+    >img{
+        width:100%;
+    }      
+
+}
+
+@media (max-width: 767px) {
+    .inner-banner{
+        .banner-data{
+            p{
+                font-size: 14px;
+            }
         }
     }
 }
@@ -1177,4 +1231,26 @@ h2:before{
             }
         }
     }
+}
+
+//contact us 
+
+.form-control {
+    font-size: 1em;
+    border-color: #083471 !important;
+    border-radius: 0 !important;
+}
+
+.company-info{
+    strong{
+        text-transform: capitalize;
+    }
+}
+.web-form{
+    h2{
+
+    }
+}
+div.mapcanvas {
+    margin-bottom: 30px;
 }
