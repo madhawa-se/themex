@@ -87,7 +87,7 @@ $main_action_right = $node->field_ctaright_content[0]['view'];
 
 
 
-$inner_banner_image = $node->field_banner_image_x[0]['view'];
+$inner_banner_image = $node->field_banner_image_x[0]['nid'];
 $my_teaser = $node->field_my_teaser[0]['value'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -212,7 +212,7 @@ $my_teaser = $node->field_my_teaser[0]['value'];
 
         <?php if (!empty($banner_image)) { ?>
 
-            <div id="hero-region" class="main-banner" style="background: no-repeat url('<?php print $banner_image ?>'); background-size: cover;">
+            <div id="hero-region" class="hero-region main-banner" style="background: no-repeat url('<?php print $banner_image ?>'); background-size: cover;">
                 <div class="container">
                     <div class="hero-text">
                         <?php if (!empty($banner_content)) { ?>
@@ -260,18 +260,34 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                     <div id="main-squeeze">
 
                         <div id="content">
-                            
+
                             <?php if (!empty($content_top)): ?>
                                 <div id="content-top">
                                     <?php print $content_top; ?>
                                 </div> <!-- /content_top -->
                             <?php endif; ?>
-                                
-                            <div class="inner-banner-region">
-                                <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
-                            </div>
-                             
-                           <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+
+                            
+                                <div class="inner-banner">
+                                    <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
+                                    <div class="banner-data">
+                                        <h1 class="title" id="page-title"><?php print $title; ?> </h1>                                   
+                                        <?php
+                                        if ($node = menu_get_object()) {
+                                            // Get the nid
+                                            $nid = $node->nid;
+                                            $loaded_node = node_load($nid);
+                                            $teaser = $loaded_node->teaser;
+                                            if ($teaser) {
+                                                print "<p>$teaser</p>";
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                </div>  
+                            
+
+                            <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php
                             if (!empty($messages)): print $messages;
                             endif;
