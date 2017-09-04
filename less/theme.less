@@ -30,6 +30,11 @@ h1 {
 h2{
     margin: 0 0 22px;
 }
+h2{
+    >a{
+        font-size: inherit;
+    }
+}
 ul,
 ul.menu{
     margin: 20px 0 10px 40px; 
@@ -155,6 +160,9 @@ body{
 }
 .text-decoration-none a {
     text-decoration: none;
+}
+.bottom-border{
+    border-bottom: 1px solid #e2e2e2;
 }
 .icon-rest {
     display: inline-block;
@@ -285,18 +293,20 @@ input[type="submit"], input[type="reset"] {
     color: #fff;
     font-size: 1.111em;
 }
-.me-btn{
+button,.me-btn{
     color: rgb( 255, 255, 255 );
     text-align: center;
     border-radius: 2px;
     background-color: rgb( 21, 148, 255 );
     border: 1px solid rgba(255, 0, 0, 0);
     margin-top: 2px;
-    padding: 13px 0 14px;
-    /*    min-width: 180px;*/
+    padding: 12px 20px;
     font-size: 1em;
     display: inline-block;
     text-decoration: none;
+}
+.me-btn-small{
+    padding: 12px 2px;
 }
 .me-btn:hover{
     background-color: @light-blue-light;
@@ -526,6 +536,7 @@ input[type="submit"], input[type="reset"] {
     }
 }
 
+
 // nevigation
 
 
@@ -569,7 +580,6 @@ input[type="submit"], input[type="reset"] {
                     }
                 }
                 .search{
-                    padding-right:0;
                     padding-left:0;
                 }
             }
@@ -617,7 +627,7 @@ input[type="submit"], input[type="reset"] {
     background-color: #6a4a67;
     background-repeat: no-repeat, repeat;
     background-size: cover, 100px;
-    background-position-x: center;
+    background-position-x: center !important;
     position: relative;
     padding: 80px;
 
@@ -748,10 +758,18 @@ input[type="submit"], input[type="reset"] {
     padding-top: 60px;
     padding-bottom: 60px;
 
+    .page-content{
+        margin-top:60px;
+        margin-bottom: 60px;
+    }
     #page-title{
         font-weight: normal;
     }
-
+    .content{
+        h3{
+            font-size: 24px;
+        }
+    }
     .intro-btn-wrap {
         .me-btn{
             min-width: 180px;
@@ -808,12 +826,13 @@ input[type="submit"], input[type="reset"] {
     }
 
 }
+
 .not-front{
     #page{
         .front-publication-wrap{
             padding: 25px;
             .me-btn{
-                font-size: 0.8em;
+                font-size: 0.7em;
             }
             .content-wrap{
                 padding:20px;
@@ -845,12 +864,13 @@ input[type="submit"], input[type="reset"] {
     padding-bottom: 56px;
     h2{
         font-weight: normal;
+        font-size:18px;
         .icon-awesome{
             padding-right: 5px;
         }
         &.title{
             background-color: @dark-blue;
-            padding: 8px 0 18px 0;
+            padding: 20px 0;
             text-align: center;
             a{
                 color: @white;
@@ -1050,7 +1070,6 @@ h2:before{
     padding: 20px;
     font-size: 16px;
     text-align: center;
-    margin-top: 60px;
 
     .secondary-links {
         .no-bullets;
@@ -1076,10 +1095,13 @@ h2:before{
         color: @white;
         p{
             font-size: 0.889em;
+            word-wrap: break-word;
         }
         h2{
             margin-bottom: 5px;
             color:@white;
+            font-size: 1.222em;
+            font-weight: normal;
         }
         .scroll-tweet iframe{
             width: 100%;
@@ -1254,4 +1276,22 @@ h2:before{
 }
 div.mapcanvas {
     margin-bottom: 30px;
+}
+
+
+//news page
+
+.news-list{
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+//publication page
+.publication-cards{
+    a{
+        font-size: 18px;
+    }
+    img{
+        width: 144px;
+    }
 }

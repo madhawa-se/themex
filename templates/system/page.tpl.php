@@ -266,26 +266,27 @@ $my_teaser = $node->field_my_teaser[0]['value'];
                                     <?php print $content_top; ?>
                                 </div> <!-- /content_top -->
                             <?php endif; ?>
+                                
 
-                            
-                                <div class="inner-banner">
-                                    <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
-                                    <div class="banner-data">
-                                        <h1 class="title" id="page-title"><?php print $title; ?> </h1>                                   
-                                        <?php
-                                        if ($node = menu_get_object()) {
-                                            // Get the nid
-                                            $nid = $node->nid;
-                                            $loaded_node = node_load($nid);
-                                            $teaser = $loaded_node->teaser;
-                                            if ($teaser) {
-                                                print "<p>$teaser</p>";
-                                            }
+
+                            <div class="inner-banner">
+                                <?php print views_embed_view('inner_page_banner', 'block_1'); ?>
+                                <div class="banner-data">
+                                    <h1 class="title" id="page-title"><?php print $title; ?> </h1>                                   
+                                    <?php
+                                    if ($node = menu_get_object()) {
+                                        // Get the nid
+                                        $nid = $node->nid;
+                                        $loaded_node = node_load($nid);
+                                        $teaser = $loaded_node->teaser;
+                                        if ($teaser) {
+                                            print "<p>$teaser</p>";
                                         }
-                                        ?>
-                                    </div>
-                                </div>  
-                            
+                                    }
+                                    ?>
+                                </div>
+                            </div>  
+
 
                             <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php

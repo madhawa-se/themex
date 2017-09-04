@@ -246,7 +246,7 @@ $main_action_right = $node->field_ctaright_content[0]['view'];
                         <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
                         <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
 
-                        <div id="content">
+                        <div id="content" class="col-xs-12 col-sm-6 page-content">
                             <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
                             <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
                             <?php
@@ -257,20 +257,22 @@ $main_action_right = $node->field_ctaright_content[0]['view'];
                             if (!empty($help)): print $help;
                             endif;
                             ?>
-                            <div id="content-content" class="clear-block col-xs-12 col-sm-6">
+                            <div id="content-content" class="clear-block">
                                 <?php print $content; ?>
                                 <div class="row intro-btn-wrap">
                                     <div class="left col-xs-12 col-sm-6"><?php print $main_action_left ?></div>
                                     <div class="right col-xs-12 col-sm-6"><?php print $main_action_right ?></div>
                                 </div>
                             </div> <!-- /content-content -->
-                            <div class="front-publication col-xs-12 col-sm-5 col-sm-push-1">
-                                <?php if (!empty($publication)) { ?>
-                                    <?php print $publication; ?>
-                                <?php } ?>
-                            </div>
+
                             <?php print $feed_icons; ?>
                         </div> <!-- /content -->
+
+                        <div class="front-publication col-xs-12 col-sm-5 col-sm-push-1">
+                            <?php if (!empty($publication)) { ?>
+                                <?php print $publication; ?>
+                            <?php } ?>
+                        </div>
 
 
                     </div> <!-- /main-squeeze /main -->
